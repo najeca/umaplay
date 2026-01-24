@@ -59,6 +59,7 @@ class AgentUnityCup(AgentScenario):
         ],
         interval_stats_refresh=3,
         select_style=None,
+        style_schedule=None,
         event_prefs: UserPrefs | None = None,
     ) -> None:
         # Shared Waiter for the whole agent
@@ -86,6 +87,7 @@ class AgentUnityCup(AgentScenario):
             skill_list=skill_list,
             interval_stats_refresh=interval_stats_refresh,
             select_style=select_style,
+            style_schedule=style_schedule,
             event_prefs=event_prefs,
             lobby_flow=LobbyFlowUnityCup(
                 ctrl,
@@ -426,9 +428,10 @@ class AgentUnityCup(AgentScenario):
                 if race_predebut:
                     # Enter or confirm race, then run RaceFlow
                     # Run RaceFlow; it will ensure navigation into Raceday if needed
+                    debut_style = self._get_style_for_race(is_debut=True)
                     ok = self.race.run(
                         prioritize_g1=False,
-                        select_style=self.select_style,
+                        select_style=debut_style,
                         from_raceday=True,
                         reason="Pre-debut (race day)",
                     )
@@ -439,13 +442,18 @@ class AgentUnityCup(AgentScenario):
                             getattr(reason_tag, "value", str(reason_tag) or "unknown"),
                         )
                         continue
+                    # Mark style as applied if it was set
+                    if debut_style:
+                        self._mark_style_applied(debut_style)
                     # Mark raced on current date-key to avoid double-race if date OCR doesn't tick
                     self.lobby.mark_raced_today(self._today_date_key())
                     continue
                 else:
+                    # Check style schedule for non-debut races
+                    scheduled_style = self._get_style_for_race(is_debut=False)
                     ok = self.race.run(
                         prioritize_g1=False,
-                        select_style=None,
+                        select_style=scheduled_style,
                         from_raceday=True,
                         reason="Normal (race day)",
                     )
@@ -456,6 +464,9 @@ class AgentUnityCup(AgentScenario):
                             getattr(reason_tag, "value", str(reason_tag) or "unknown"),
                         )
                         continue
+                    # Mark style as applied if it was set
+                    if scheduled_style:
+                        self._mark_style_applied(scheduled_style)
                     self.lobby.mark_raced_today(self._today_date_key())
                     continue
             
