@@ -59,6 +59,7 @@ I take no responsibility for bans, issues, or account losses that may result fro
 * **Races** – Schedule in advance and auto-pick optimal races.
 * **Skills** – Buys and prioritizes selected skills automatically.
 * **Goals & Styles** – Handles special goals and lets you set racing style.
+* **Running Style Schedule** – Switch running styles automatically based on date.
 * **Cross-Platform** – Works on PC (Steam) and Android (scrcpy/Bluestacks); resolution independent but OCR works better on bigger resolutions.
 * **Claw Machine** – Supports the claw mini-game.
 * **Hints** – Prioritize skill hints when enabled, with automatic de-prioritization when the skill is already learned.
@@ -93,12 +94,10 @@ Make sure you meet these conditions:
    - Download from: [git-scm.com](https://git-scm.com/downloads)
    - Run the installer with all default settings
 
-2. **Install Anaconda** (required for Python environment)
-   - Download Anaconda: [anaconda.com/download](https://www.anaconda.com/download)
-   - Choose the **64-bit Windows Installer**
+2. **Install Python 3.10**
+   - Download from: [python.org](https://www.python.org/downloads/)
    - During installation:
-     - Check "Add Anaconda to my PATH environment variable"
-     - Select "Register Anaconda as my default Python"
+     - Check "Add Python to PATH"
    - Complete the installation
 
 #### Step 2: Download and Set Up the Bot
@@ -113,19 +112,18 @@ Make sure you meet these conditions:
    cd Umaplay
    ```
 
-3. **Set Up Python Environment**
+3. **Set Up Python Environment (venv)**
    ```bash
-   conda create -n env_uma python==3.10
-   conda activate env_uma
+   python -m venv .venv
+   .venv\Scripts\activate
    python -m pip install -r requirements.txt
    ```
-   - Type `y` and press Enter if prompted to proceed
    - This may take several minutes to complete
 
 #### Step 3: Verify Installation
-After everything is installed, you should see `(env_uma)` at the beginning of your command prompt line, indicating the environment is active.
+After everything is installed, you should see `(.venv)` at the beginning of your command prompt line, indicating the environment is active.
 
-> 💡 **Troubleshooting**: If you get a "conda is not recognized" error, close and reopen your command prompt, then try again. If you get some error with library version, try to remove all versions from requirements.txt and run `pip install -r requirements.txt` again. So you get the latest versions for python 3.12 or 3.13. I recommend you to use 3.10.
+> ???? **Troubleshooting**: If you get library version errors, try to remove all versions from requirements.txt and run `pip install -r requirements.txt` again. I recommend you to use Python 3.10.
 
 If you face OCR errors, reinstall **paddle** and **paddleocr**:
 
@@ -141,7 +139,7 @@ python -m pip install paddlex
 1. Open Command Prompt and navigate to the Umaplay folder
 2. Run these commands:
    ```bash
-   conda activate env_uma
+   .venv\Scripts\activate
    python main.py
    ```
 
@@ -163,11 +161,22 @@ I regularly push new updates and bug fixes. To update:
 **Option 2: Manual Update**
 Open Command Prompt in the Umaplay folder and run:
 ```bash
-conda activate env_uma
+.venv\Scripts\activate
 git reset --hard
 git pull
 pip install -r requirements.txt
 ```
+
+#### Updating Game Data (Supports & Characters)
+
+To automatically discover and update supports/characters (and rebuild the site):
+
+```bash
+.venv\Scripts\activate
+python scripts/update_game_data.py --discover --build
+```
+
+If you want images too, add `--images`.
 
 Then **Restart the bot after updating. Close all terminals / IDEs and do a fresh start**
 
@@ -177,7 +186,7 @@ Then **Restart the bot after updating. Close all terminals / IDEs and do a fresh
 
 #### Future: Working on creating releases when versioning
 
-I'm trying to precompile everything in a Windows executable, but I still recommend you to use the first option with python and Conda; this will allow you to easily have the last version.
+I'm trying to precompile everything in a Windows executable, but I still recommend you to use the first option with python and venv; this will allow you to easily have the last version.
 
 (Because I'm not able to reduce the size of this exe yet; specially for 'torch')
 
@@ -255,6 +264,7 @@ Unity Cup scenario is fully supported, with dedicated strategy controls:
 You can set:
 - **General configurations** (window title, modes, fast mode, advanced settings)
 - **Presets** (target stats, priority stats, moods, skills, race scheduler)
+- **Running style schedule**: switch running styles based on date.
 - **Responsive layout**: left = General, right = Presets (collapsible)
 - **Save config**: persists changes to `config.json` in the repo root (via backend API).
 - **Events selector**: Like in Gametora, to can select the card but also you can 'tweak' the event option (it is still experimental, but it worked for me):
