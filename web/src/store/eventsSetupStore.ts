@@ -112,6 +112,7 @@ const pickSupport = (
   )
   return {
     slot,
+    id: (raw as any).id,
     name: (raw as any).name,
     rarity: (raw as any).rarity,
     attribute: (raw as any).attribute,
