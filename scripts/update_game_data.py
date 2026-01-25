@@ -597,10 +597,31 @@ def fetch_events_with_scraper(
 
 
 def create_entry_key(entry: Dict[str, Any]) -> str:
-    """Create unique key for an event entry."""
+    """Create unique key for an event entry.
+
+    Uses gametora_id when available to distinguish between different versions
+    of cards that share the same name, attribute, and rarity (e.g., two SSR Speed
+    Silence Suzuka cards).
+    """
     if entry.get("type") == "support":
+        # Use gametora_id if available for unique identification
+        gametora_id = entry.get("gametora_id")
+        if gametora_id:
+            return f"gt_{gametora_id}".lower()
+        # Fallback for legacy entries without gametora_id
         return f"{entry.get('name', '')}_{entry.get('attribute', '')}_{entry.get('rarity', '')}".lower()
     else:  # trainee
+        gametora_id = entry.get("gametora_id")
+        if gametora_id:
+            return f"gt_{gametora_id}".lower()
+        return f"{entry.get('name', '')}_profile".lower()
+
+
+def _legacy_key(entry: Dict[str, Any]) -> str:
+    """Create legacy key (name/attribute/rarity) for migration compatibility."""
+    if entry.get("type") == "support":
+        return f"{entry.get('name', '')}_{entry.get('attribute', '')}_{entry.get('rarity', '')}".lower()
+    else:
         return f"{entry.get('name', '')}_profile".lower()
 
 
@@ -612,12 +633,26 @@ def merge_events(
     """
     Merge new entries into existing events.
     Returns (merged_list, added_count, updated_count).
+
+    Handles migration from old entries (without gametora_id) to new entries (with gametora_id).
+    When a new entry with gametora_id matches an old entry by name/attribute/rarity,
+    the old entry is replaced.
     """
     # Build lookup by key
     lookup: Dict[str, int] = {}
     for idx, entry in enumerate(existing):
         key = create_entry_key(entry)
         lookup[key] = idx
+
+    # Also build a legacy lookup for entries without gametora_id (for migration)
+    legacy_lookup: Dict[str, int] = {}
+    for idx, entry in enumerate(existing):
+        if not entry.get("gametora_id"):
+            legacy_key = _legacy_key(entry)
+            legacy_lookup[legacy_key] = idx
+
+    # Track which legacy entries have been replaced (to avoid double-replacement)
+    replaced_legacy_indices: set = set()
 
     merged = list(existing)
     added = 0
@@ -626,17 +661,38 @@ def merge_events(
     for new_entry in new_entries:
         key = create_entry_key(new_entry)
         if key in lookup:
-            # Update existing
+            # Update existing entry with same key
             idx = lookup[key]
             merged[idx] = new_entry
             updated += 1
             dbg(debug, f"[DEBUG] Updated existing entry: {key}")
         else:
-            # Add new
-            merged.append(new_entry)
-            lookup[key] = len(merged) - 1
-            added += 1
-            dbg(debug, f"[DEBUG] Added new entry: {key}")
+            # Check if this new entry (with gametora_id) should replace a legacy entry
+            new_has_gametora_id = bool(new_entry.get("gametora_id"))
+            legacy_key = _legacy_key(new_entry)
+
+            if new_has_gametora_id and legacy_key in legacy_lookup:
+                legacy_idx = legacy_lookup[legacy_key]
+                if legacy_idx not in replaced_legacy_indices:
+                    # Replace the legacy entry with the new one
+                    merged[legacy_idx] = new_entry
+                    replaced_legacy_indices.add(legacy_idx)
+                    lookup[key] = legacy_idx
+                    updated += 1
+                    dbg(debug, f"[DEBUG] Replaced legacy entry '{legacy_key}' with new entry: {key}")
+                else:
+                    # Legacy entry already replaced by another card with same name/attr/rarity
+                    # This is the second (or more) card with same name/attr/rarity - add as new
+                    merged.append(new_entry)
+                    lookup[key] = len(merged) - 1
+                    added += 1
+                    dbg(debug, f"[DEBUG] Added additional entry (same name/attr/rarity): {key}")
+            else:
+                # Add new entry
+                merged.append(new_entry)
+                lookup[key] = len(merged) - 1
+                added += 1
+                dbg(debug, f"[DEBUG] Added new entry: {key}")
 
     return merged, added, updated
 

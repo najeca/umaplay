@@ -224,6 +224,7 @@ export const presetSchema = z.object({
 
     const selectedSupport = z.object({
       slot: z.number(),
+      id: z.string().optional(),  // unique identifier for cards with same name/attr/rarity
       name: z.string(),
       rarity,
       attribute: attr,

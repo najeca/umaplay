@@ -823,6 +823,12 @@ def parse_events_from_json_data(event_data: Dict[str, Any], debug: bool, skill_m
             parse_block(events_struct.get(extra_key, []), 'random')
     return out
 
+def extract_gametora_id(slug: str) -> Optional[str]:
+    """Extract the numeric GameTora ID from a slug like '30036-riko-kashimoto'."""
+    match = re.match(r'^(\d+)-', slug)
+    return match.group(1) if match else None
+
+
 def fetch_and_parse_cards(slugs: List[str], card_type: str, skill_lookup: Dict[str, str], status_lookup: Dict[str, str], period: str, img_dir: Optional[str], download_images: bool, debug: bool, shared_events_path: Optional[str] = None) -> List[Dict[str, Any]]:
     ensure_requests()
     results: List[Dict[str, Any]] = []
@@ -838,6 +844,8 @@ def fetch_and_parse_cards(slugs: List[str], card_type: str, skill_lookup: Dict[s
     CHARACTER_IMG_CLASS_PATTERN = re.compile(r"^characters_infobox_character_image__")
 
     for slug in slugs:
+        # Extract GameTora numeric ID from slug for unique identification
+        gametora_id = extract_gametora_id(slug)
         url = (SUPPORT_BASE_URL if card_type == "support" else CHARACTER_BASE_URL) + slug
         dbg(debug, f"[DEBUG] Fetching {card_type} URL: {url}")
         try:
@@ -887,7 +895,11 @@ def fetch_and_parse_cards(slugs: List[str], card_type: str, skill_lookup: Dict[s
                     os.makedirs(sub, exist_ok=True)
 
                     if card_type == "support":
-                        fname = f"{name}_{attribute}_{rarity}{ext}"
+                        # Include gametora_id in filename to distinguish cards with same name/attr/rarity
+                        if gametora_id:
+                            fname = f"{name}_{attribute}_{rarity}_{gametora_id}{ext}"
+                        else:
+                            fname = f"{name}_{attribute}_{rarity}{ext}"
                         with open(os.path.join(sub, fname), "wb") as f:
                             f.write(ir.content)
                         dbg(debug, f"[INFO] Downloaded image: {os.path.join(sub, fname)}")
@@ -946,14 +958,26 @@ def fetch_and_parse_cards(slugs: List[str], card_type: str, skill_lookup: Dict[s
         hint_skills = skill_payload((item_data.get("hints", {}) or {}).get("hint_skills"))
         event_skills = skill_payload(item_data.get("event_skills"))
 
+        # Build unique ID - include gametora_id for cards with same name/attribute/rarity
+        if card_type == "support":
+            if gametora_id:
+                entry_id = f"{name}_{attribute}_{rarity}_{gametora_id}"
+            else:
+                entry_id = f"{name}_{attribute}_{rarity}".strip("_")
+        else:
+            entry_id = f"{name}_profile"
+
         obj = {
             "type": "support" if card_type == "support" else "trainee",
             "name": name if card_type == "support" else (f"{name} ({(version or '').replace('_',' ').title()})" if version else name),
             "rarity": rarity if card_type == "support" else "None",
             "attribute": attribute if card_type == "support" else "None",
-            "id": f"{name}_{attribute}_{rarity}".strip("_") if card_type == "support" else f"{name}_profile",
+            "id": entry_id,
             "choice_events": events
         }
+        # Include gametora_id for unique identification of cards with same name/attribute/rarity
+        if gametora_id:
+            obj["gametora_id"] = gametora_id
         # Only include skill arrays if they have content or it's a support card
         if card_type == "support" or hint_skills:
             obj["hint_skills"] = hint_skills

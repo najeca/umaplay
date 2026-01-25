@@ -11195,6 +11195,75 @@
     "event_kind": "random"
   },
   {
+    "key": "support/Silence Suzuka/SPD/SSR/On and On",
+    "key_step": "support/Silence Suzuka/SPD/SSR/On and On#s1",
+    "type": "support",
+    "name": "Silence Suzuka",
+    "rarity": "SSR",
+    "attribute": "SPD",
+    "event_name": "On and On",
+    "chain_step": 1,
+    "default_preference": 2,
+    "options": {
+      "1": [
+        {
+          "speed": 10,
+          "stamina": 5,
+          "bond": 5
+        }
+      ],
+      "2": [
+        {
+          "speed": 15,
+          "bond": 5
+        }
+      ]
+    },
+    "title_norm": "on and on",
+    "image_path": "web\\public\\events\\support\\Silence Suzuka_SPD_SSR.png",
+    "phash64": 9863207345788894614,
+    "image_variants": [
+      "web\\public\\events\\support\\Silence Suzuka_SPD_SSR.png"
+    ],
+    "event_kind": "random"
+  },
+  {
+    "key": "support/Silence Suzuka/SPD/SSR/What Should I Do?",
+    "key_step": "support/Silence Suzuka/SPD/SSR/What Should I Do?#s1",
+    "type": "support",
+    "name": "Silence Suzuka",
+    "rarity": "SSR",
+    "attribute": "SPD",
+    "event_name": "What Should I Do?",
+    "chain_step": 1,
+    "default_preference": 1,
+    "options": {
+      "1": [
+        {
+          "speed": 5,
+          "stamina": 5,
+          "wit": 5,
+          "bond": 5
+        }
+      ],
+      "2": [
+        {
+          "hints": [
+            "Left-Handed ○ (+1)"
+          ],
+          "bond": 5
+        }
+      ]
+    },
+    "title_norm": "what should i do?",
+    "image_path": "web\\public\\events\\support\\Silence Suzuka_SPD_SSR.png",
+    "phash64": 9863207345788894614,
+    "image_variants": [
+      "web\\public\\events\\support\\Silence Suzuka_SPD_SSR.png"
+    ],
+    "event_kind": "random"
+  },
+  {
     "key": "support/Silence Suzuka/STA/SSR/On and On",
     "key_step": "support/Silence Suzuka/STA/SSR/On and On#s1",
     "type": "support",

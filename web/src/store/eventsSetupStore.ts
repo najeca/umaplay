@@ -272,6 +272,7 @@ export const useEventsSetupStore = create<State>()(
           )
           supports[idx] = {
             slot: idx,
+            id: ref.id,
             name: ref.name,
             rarity: ref.rarity,
             attribute: ref.attribute,

@@ -53,6 +53,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10026",
 		"hint_skills": [
 			{
 				"id": "200442",
@@ -174,6 +175,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "20005",
 		"hint_skills": [
 			{
 				"id": "200442",
@@ -266,6 +268,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "10036",
 		"hint_skills": [
 			{
 				"id": "200722",
@@ -373,6 +376,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "20012",
 		"hint_skills": [
 			{
 				"id": "200722",
@@ -454,6 +458,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "10025",
 		"hint_skills": [
 			{
 				"id": "200472",
@@ -589,6 +594,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "20004",
 		"hint_skills": [
 			{
 				"id": "200472",
@@ -680,6 +686,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "10037",
 		"hint_skills": [
 			{
 				"id": "201492",
@@ -808,6 +815,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30013",
 		"hint_skills": [
 			{
 				"id": "201492",
@@ -1076,6 +1084,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10022",
 		"hint_skills": [],
 		"event_skills": [
 			{
@@ -1338,6 +1347,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "20021",
 		"hint_skills": [],
 		"event_skills": [
 			{
@@ -1415,6 +1425,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10065",
 		"hint_skills": [
 			{
 				"id": "200292",
@@ -1601,6 +1612,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30042",
 		"hint_skills": [
 			{
 				"id": "200292",
@@ -1709,6 +1721,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "10042",
 		"hint_skills": [
 			{
 				"id": "200262",
@@ -1843,6 +1856,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30020",
 		"hint_skills": [
 			{
 				"id": "200262",
@@ -1937,6 +1951,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "10029",
 		"hint_skills": [
 			{
 				"id": "200262",
@@ -2059,6 +2074,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "20006",
 		"hint_skills": [
 			{
 				"id": "200262",
@@ -2144,6 +2160,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10073",
 		"hint_skills": [
 			{
 				"id": "200962",
@@ -2295,6 +2312,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30068",
 		"hint_skills": [
 			{
 				"id": "200962",
@@ -2391,6 +2409,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10052",
 		"hint_skills": [
 			{
 				"id": "201631",
@@ -2527,6 +2546,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "20024",
 		"hint_skills": [
 			{
 				"id": "201631",
@@ -2693,6 +2713,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30071",
 		"hint_skills": [
 			{
 				"id": "201631",
@@ -2798,6 +2819,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "10023",
 		"hint_skills": [
 			{
 				"id": "200282",
@@ -2914,6 +2936,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "20002",
 		"hint_skills": [
 			{
 				"id": "200282",
@@ -3062,6 +3085,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30047",
 		"hint_skills": [
 			{
 				"id": "200282",
@@ -3154,6 +3178,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10038",
 		"hint_skills": [
 			{
 				"id": "200132",
@@ -3265,6 +3290,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "20013",
 		"hint_skills": [
 			{
 				"id": "200132",
@@ -3349,6 +3375,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10011",
 		"hint_skills": [
 			{
 				"id": "200132",
@@ -3490,6 +3517,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30007",
 		"hint_skills": [
 			{
 				"id": "200132",
@@ -3588,6 +3616,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "10028",
 		"hint_skills": [
 			{
 				"id": "200012",
@@ -3701,6 +3730,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "20037",
 		"hint_skills": [
 			{
 				"id": "200012",
@@ -3849,6 +3879,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30010",
 		"hint_skills": [
 			{
 				"id": "200012",
@@ -3938,6 +3969,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "10049",
 		"hint_skills": [
 			{
 				"id": "200182",
@@ -4049,6 +4081,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "20001",
 		"hint_skills": [
 			{
 				"id": "200182",
@@ -4134,6 +4167,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10017",
 		"hint_skills": [
 			{
 				"id": "200082",
@@ -4260,6 +4294,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30014",
 		"hint_skills": [
 			{
 				"id": "200082",
@@ -4341,6 +4376,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10006",
 		"hint_skills": [
 			{
 				"id": "201631",
@@ -4532,6 +4568,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "30057",
 		"hint_skills": [
 			{
 				"id": "201631",
@@ -4723,6 +4760,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30004",
 		"hint_skills": [
 			{
 				"id": "201631",
@@ -4857,6 +4895,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10009",
 		"hint_skills": [
 			{
 				"id": "200042",
@@ -5031,6 +5070,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30006",
 		"hint_skills": [
 			{
 				"id": "200042",
@@ -5141,6 +5181,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "10020",
 		"hint_skills": [],
 		"event_skills": [
 			{
@@ -5247,6 +5288,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30019",
 		"hint_skills": [],
 		"event_skills": [
 			{
@@ -5311,6 +5353,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10064",
 		"hint_skills": [
 			{
 				"id": "200212",
@@ -5461,6 +5504,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30040",
 		"hint_skills": [
 			{
 				"id": "200212",
@@ -5568,6 +5612,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "10024",
 		"hint_skills": [
 			{
 				"id": "201532",
@@ -5682,6 +5727,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "20003",
 		"hint_skills": [
 			{
 				"id": "201532",
@@ -5765,6 +5811,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10053",
 		"hint_skills": [
 			{
 				"id": "200442",
@@ -5884,6 +5931,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "20025",
 		"hint_skills": [
 			{
 				"id": "200442",
@@ -6030,6 +6078,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30063",
 		"hint_skills": [
 			{
 				"id": "200442",
@@ -6119,6 +6168,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10068",
 		"hint_skills": [
 			{
 				"id": "200172",
@@ -6256,6 +6306,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "20032",
 		"hint_skills": [
 			{
 				"id": "200172",
@@ -6352,6 +6403,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "10035",
 		"hint_skills": [
 			{
 				"id": "201282",
@@ -6490,6 +6542,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30011",
 		"hint_skills": [
 			{
 				"id": "201282",
@@ -6577,6 +6630,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10063",
 		"hint_skills": [
 			{
 				"id": "200132",
@@ -6714,6 +6768,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "30039",
 		"hint_skills": [
 			{
 				"id": "200132",
@@ -6802,6 +6857,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10048",
 		"hint_skills": [
 			{
 				"id": "200262",
@@ -6917,6 +6973,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "20020",
 		"hint_skills": [
 			{
 				"id": "200262",
@@ -7079,6 +7136,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30056",
 		"hint_skills": [
 			{
 				"id": "200262",
@@ -7178,6 +7236,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10055",
 		"hint_skills": [
 			{
 				"id": "200352",
@@ -7332,6 +7391,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30028",
 		"hint_skills": [
 			{
 				"id": "200352",
@@ -7429,6 +7489,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10031",
 		"hint_skills": [
 			{
 				"id": "200162",
@@ -7545,6 +7606,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "20008",
 		"hint_skills": [
 			{
 				"id": "200162",
@@ -7697,6 +7759,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30075",
 		"hint_skills": [
 			{
 				"id": "200162",
@@ -7791,6 +7854,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10004",
 		"hint_skills": [
 			{
 				"id": "200682",
@@ -7873,6 +7937,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10043",
 		"hint_skills": [
 			{
 				"id": "200362",
@@ -7983,6 +8048,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "20015",
 		"hint_skills": [
 			{
 				"id": "200362",
@@ -8126,6 +8192,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30074",
 		"hint_skills": [
 			{
 				"id": "200362",
@@ -8219,6 +8286,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "10044",
 		"hint_skills": [
 			{
 				"id": "200092",
@@ -8350,6 +8418,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "20016",
 		"hint_skills": [
 			{
 				"id": "200092",
@@ -8438,6 +8507,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10057",
 		"hint_skills": [
 			{
 				"id": "200442",
@@ -8579,6 +8649,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30030",
 		"hint_skills": [
 			{
 				"id": "200442",
@@ -8667,6 +8738,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "10030",
 		"hint_skills": [
 			{
 				"id": "200142",
@@ -8783,6 +8855,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "20007",
 		"hint_skills": [
 			{
 				"id": "200142",
@@ -8944,6 +9017,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30072",
 		"hint_skills": [
 			{
 				"id": "200142",
@@ -9041,6 +9115,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10045",
 		"hint_skills": [
 			{
 				"id": "200302",
@@ -9176,6 +9251,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "20017",
 		"hint_skills": [
 			{
 				"id": "200302",
@@ -9269,6 +9345,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10069",
 		"hint_skills": [
 			{
 				"id": "200022",
@@ -9389,6 +9466,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "20034",
 		"hint_skills": [
 			{
 				"id": "200022",
@@ -9469,6 +9547,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10046",
 		"hint_skills": [
 			{
 				"id": "200062",
@@ -9584,6 +9663,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "20018",
 		"hint_skills": [
 			{
 				"id": "200062",
@@ -9723,6 +9803,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30041",
 		"hint_skills": [
 			{
 				"id": "200062",
@@ -9809,6 +9890,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10010",
 		"hint_skills": [
 			{
 				"id": "200172",
@@ -9953,6 +10035,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30022",
 		"hint_skills": [
 			{
 				"id": "200062",
@@ -10062,6 +10145,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10054",
 		"hint_skills": [
 			{
 				"id": "201631",
@@ -10242,6 +10326,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "30027",
 		"hint_skills": [
 			{
 				"id": "201631",
@@ -10355,6 +10440,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "10033",
 		"hint_skills": [
 			{
 				"id": "200162",
@@ -10464,6 +10550,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "20010",
 		"hint_skills": [
 			{
 				"id": "200162",
@@ -10599,6 +10686,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30048",
 		"hint_skills": [
 			{
 				"id": "200162",
@@ -10686,6 +10774,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "10032",
 		"hint_skills": [
 			{
 				"id": "200242",
@@ -10808,6 +10897,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "20009",
 		"hint_skills": [
 			{
 				"id": "200242",
@@ -10949,6 +11039,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30066",
 		"hint_skills": [
 			{
 				"id": "200242",
@@ -11034,6 +11125,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10067",
 		"hint_skills": [
 			{
 				"id": "200302",
@@ -11206,6 +11298,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30043",
 		"hint_skills": [
 			{
 				"id": "200302",
@@ -11320,6 +11413,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10072",
 		"hint_skills": [
 			{
 				"id": "200012",
@@ -11459,6 +11553,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30044",
 		"hint_skills": [
 			{
 				"id": "200012",
@@ -11616,6 +11711,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30069",
 		"hint_skills": [
 			{
 				"id": "200012",
@@ -11717,6 +11813,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "10040",
 		"hint_skills": [
 			{
 				"id": "201641",
@@ -11838,6 +11935,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "20014",
 		"hint_skills": [
 			{
 				"id": "201641",
@@ -11997,6 +12095,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30073",
 		"hint_skills": [
 			{
 				"id": "201641",
@@ -12102,6 +12201,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "10047",
 		"hint_skills": [
 			{
 				"id": "200122",
@@ -12226,6 +12326,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "20019",
 		"hint_skills": [
 			{
 				"id": "200122",
@@ -12361,6 +12462,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "20026",
 		"hint_skills": [
 			{
 				"id": "200122",
@@ -12516,6 +12618,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30054",
 		"hint_skills": [
 			{
 				"id": "200122",
@@ -12610,6 +12713,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "10041",
 		"hint_skills": [
 			{
 				"id": "200052",
@@ -12725,6 +12829,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "20027",
 		"hint_skills": [
 			{
 				"id": "200052",
@@ -12866,6 +12971,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30018",
 		"hint_skills": [
 			{
 				"id": "200052",
@@ -12956,6 +13062,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10005",
 		"hint_skills": [
 			{
 				"id": "200222",
@@ -13245,6 +13352,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "30024",
 		"hint_skills": [
 			{
 				"id": "200222",
@@ -13357,6 +13465,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10015",
 		"hint_skills": [
 			{
 				"id": "200272",
@@ -13516,6 +13625,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30034",
 		"hint_skills": [
 			{
 				"id": "200272",
@@ -13681,6 +13791,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30023",
 		"hint_skills": [
 			{
 				"id": "200272",
@@ -13985,6 +14096,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10060",
 		"hint_skills": [],
 		"event_skills": [
 			{
@@ -14262,6 +14374,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30036",
 		"hint_skills": [],
 		"event_skills": [
 			{
@@ -14339,6 +14452,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10018",
 		"hint_skills": [
 			{
 				"id": "200962",
@@ -14477,6 +14591,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30015",
 		"hint_skills": [
 			{
 				"id": "200962",
@@ -14575,6 +14690,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10062",
 		"hint_skills": [
 			{
 				"id": "201532",
@@ -14737,6 +14853,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "30038",
 		"hint_skills": [
 			{
 				"id": "201532",
@@ -14826,6 +14943,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10056",
 		"hint_skills": [
 			{
 				"id": "200152",
@@ -14987,6 +15105,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "30029",
 		"hint_skills": [
 			{
 				"id": "200152",
@@ -15088,6 +15207,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10061",
 		"hint_skills": [
 			{
 				"id": "200152",
@@ -15227,6 +15347,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "20029",
 		"hint_skills": [
 			{
 				"id": "200152",
@@ -15325,6 +15446,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10014",
 		"hint_skills": [
 			{
 				"id": "200302",
@@ -15485,6 +15607,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30008",
 		"hint_skills": [
 			{
 				"id": "200302",
@@ -15663,6 +15786,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "30055",
 		"hint_skills": [
 			{
 				"id": "200302",
@@ -15757,6 +15881,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "10066",
 		"hint_skills": [
 			{
 				"id": "200162",
@@ -15879,6 +16004,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "20031",
 		"hint_skills": [
 			{
 				"id": "200162",
@@ -15961,6 +16087,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10002",
 		"hint_skills": [
 			{
 				"id": "201522",
@@ -16000,6 +16127,170 @@
 			}
 		],
 		"event_skills": [
+			{
+				"id": "200022",
+				"name": "Left-Handed ○"
+			}
+		]
+	},
+	{
+		"type": "support",
+		"name": "Silence Suzuka",
+		"rarity": "SSR",
+		"attribute": "SPD",
+		"id": "Silence Suzuka_SPD_SSR",
+		"choice_events": [
+			{
+				"type": "random",
+				"chain_step": 1,
+				"name": "On and On",
+				"options": {
+					"1": [
+						{
+							"speed": 10,
+							"stamina": 5,
+							"bond": 5
+						}
+					],
+					"2": [
+						{
+							"speed": 15,
+							"bond": 5
+						}
+					]
+				},
+				"default_preference": 2
+			},
+			{
+				"type": "random",
+				"chain_step": 1,
+				"name": "What Should I Do?",
+				"options": {
+					"1": [
+						{
+							"speed": 5,
+							"stamina": 5,
+							"wit": 5,
+							"bond": 5
+						}
+					],
+					"2": [
+						{
+							"hints": [
+								"Left-Handed ○ (+1)"
+							],
+							"bond": 5
+						}
+					]
+				},
+				"default_preference": 1
+			},
+			{
+				"type": "chain",
+				"chain_step": 1,
+				"name": "Letters → ?",
+				"options": {
+					"1": [
+						{
+							"speed": 10,
+							"hints": [
+								"Restart (+1)"
+							],
+							"bond": 5
+						}
+					]
+				},
+				"default_preference": 1
+			},
+			{
+				"type": "chain",
+				"chain_step": 2,
+				"name": "Letters → Feelings → ?",
+				"options": {
+					"1": [
+						{
+							"speed": 10,
+							"power": 10,
+							"mood": 1,
+							"hints": [
+								"Focus (+1)"
+							],
+							"bond": 5
+						}
+					]
+				},
+				"default_preference": 1
+			},
+			{
+				"type": "chain",
+				"chain_step": 3,
+				"name": "Letters → Feelings → Wait for Me, Okay?",
+				"options": {
+					"1": [
+						{
+							"speed": 10,
+							"hints": [
+								"Unrestrained (+2)"
+							],
+							"bond": 5
+						}
+					]
+				},
+				"default_preference": 1
+			}
+		],
+		"gametora_id": "30002",
+		"hint_skills": [
+			{
+				"id": "201522",
+				"name": "Front Runner Savvy ○"
+			},
+			{
+				"id": "200712",
+				"name": "Rosy Outlook"
+			},
+			{
+				"id": "200542",
+				"name": "Fast-Paced"
+			},
+			{
+				"id": "201242",
+				"name": "Front Runner Straightaways ○"
+			},
+			{
+				"id": "201252",
+				"name": "Front Runner Corners ○"
+			},
+			{
+				"id": "201272",
+				"name": "Leader's Pride"
+			},
+			{
+				"id": "200532",
+				"name": "Early Lead"
+			},
+			{
+				"id": "200552",
+				"name": "Final Push"
+			},
+			{
+				"id": "200432",
+				"name": "Focus"
+			}
+		],
+		"event_skills": [
+			{
+				"id": "201302",
+				"name": "Restart"
+			},
+			{
+				"id": "200432",
+				"name": "Focus"
+			},
+			{
+				"id": "200551",
+				"name": "Unrestrained"
+			},
 			{
 				"id": "200022",
 				"name": "Left-Handed ○"
@@ -16101,6 +16392,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30076",
 		"hint_skills": [
 			{
 				"id": "201522",
@@ -16258,6 +16550,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30062",
 		"hint_skills": [
 			{
 				"id": "201522",
@@ -16367,6 +16660,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10071",
 		"hint_skills": [
 			{
 				"id": "201641",
@@ -16487,6 +16781,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "20038",
 		"hint_skills": [
 			{
 				"id": "201641",
@@ -16570,6 +16865,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "10039",
 		"hint_skills": [
 			{
 				"id": "200262",
@@ -16736,6 +17032,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30017",
 		"hint_skills": [
 			{
 				"id": "200262",
@@ -16850,6 +17147,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10001",
 		"hint_skills": [
 			{
 				"id": "200162",
@@ -17015,6 +17313,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30001",
 		"hint_skills": [
 			{
 				"id": "200162",
@@ -17192,6 +17491,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30025",
 		"hint_skills": [
 			{
 				"id": "200162",
@@ -17292,6 +17592,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "10019",
 		"hint_skills": [
 			{
 				"id": "200152",
@@ -17417,6 +17718,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30016",
 		"hint_skills": [
 			{
 				"id": "200152",
@@ -17505,6 +17807,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "10050",
 		"hint_skills": [
 			{
 				"id": "201482",
@@ -17644,6 +17947,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "20023",
 		"hint_skills": [
 			{
 				"id": "201482",
@@ -17819,6 +18123,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30045",
 		"hint_skills": [
 			{
 				"id": "201482",
@@ -17911,6 +18216,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "10013",
 		"hint_skills": [
 			{
 				"id": "201532",
@@ -18008,6 +18314,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "10008",
 		"hint_skills": [
 			{
 				"id": "200572",
@@ -18097,6 +18404,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "10027",
 		"hint_skills": [
 			{
 				"id": "200712",
@@ -18247,6 +18555,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30064",
 		"hint_skills": [
 			{
 				"id": "200712",
@@ -18397,6 +18706,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30009",
 		"hint_skills": [
 			{
 				"id": "200712",
@@ -18661,6 +18971,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10021",
 		"hint_skills": [],
 		"event_skills": [
 			{
@@ -18905,6 +19216,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30021",
 		"hint_skills": [],
 		"event_skills": [
 			{
@@ -18979,6 +19291,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10012",
 		"hint_skills": [
 			{
 				"id": "200562",
@@ -19068,6 +19381,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10003",
 		"hint_skills": [
 			{
 				"id": "201142",
@@ -19200,6 +19514,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30003",
 		"hint_skills": [
 			{
 				"id": "201142",
@@ -19289,6 +19604,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10070",
 		"hint_skills": [
 			{
 				"id": "200302",
@@ -19427,6 +19743,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "20035",
 		"hint_skills": [
 			{
 				"id": "200302",
@@ -19515,6 +19832,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10051",
 		"hint_skills": [
 			{
 				"id": "200282",
@@ -19681,6 +19999,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "30026",
 		"hint_skills": [
 			{
 				"id": "200282",
@@ -19778,6 +20097,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "10007",
 		"hint_skills": [
 			{
 				"id": "200032",
@@ -19917,6 +20237,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "20039",
 		"hint_skills": [
 			{
 				"id": "200032",
@@ -20069,6 +20390,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30005",
 		"hint_skills": [
 			{
 				"id": "200032",
@@ -20174,6 +20496,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "10016",
 		"hint_skills": [
 			{
 				"id": "200152",
@@ -20304,6 +20627,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30012",
 		"hint_skills": [
 			{
 				"id": "200152",
@@ -20440,6 +20764,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30033",
 		"hint_skills": [
 			{
 				"id": "200152",
@@ -20589,6 +20914,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30046",
 		"hint_skills": [
 			{
 				"id": "200152",
@@ -20690,6 +21016,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10058",
 		"hint_skills": [
 			{
 				"id": "200462",
@@ -20840,6 +21167,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30032",
 		"hint_skills": [
 			{
 				"id": "200462",
@@ -20938,6 +21266,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "10034",
 		"hint_skills": [
 			{
 				"id": "200202",
@@ -21045,6 +21374,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "20011",
 		"hint_skills": [
 			{
 				"id": "200202",
@@ -21186,6 +21516,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30070",
 		"hint_skills": [
 			{
 				"id": "200202",
@@ -21353,6 +21684,7 @@
 				"default_preference": 2
 			}
 		],
+		"gametora_id": "30031",
 		"hint_skills": [
 			{
 				"id": "200202",
@@ -21443,6 +21775,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "10059",
 		"hint_skills": [
 			{
 				"id": "201532",
@@ -21576,6 +21909,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "20028",
 		"hint_skills": [
 			{
 				"id": "201532",
@@ -21735,6 +22069,7 @@
 				"default_preference": 1
 			}
 		],
+		"gametora_id": "30065",
 		"hint_skills": [
 			{
 				"id": "201532",
@@ -22992,7 +23327,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "101901"
 	},
 	{
 		"type": "trainee",
@@ -24167,7 +24503,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "103201"
 	},
 	{
 		"type": "trainee",
@@ -25316,7 +25653,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "101801"
 	},
 	{
 		"type": "trainee",
@@ -26472,7 +26810,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "101802"
 	},
 	{
 		"type": "trainee",
@@ -27602,7 +27941,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "102301"
 	},
 	{
 		"type": "trainee",
@@ -28739,7 +29079,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "102302"
 	},
 	{
 		"type": "trainee",
@@ -29863,7 +30204,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "103801"
 	},
 	{
 		"type": "trainee",
@@ -31037,7 +31379,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "100901"
 	},
 	{
 		"type": "trainee",
@@ -32254,7 +32597,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "103701"
 	},
 	{
 		"type": "trainee",
@@ -33368,7 +33712,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "101401"
 	},
 	{
 		"type": "trainee",
@@ -34488,7 +34833,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "101402"
 	},
 	{
 		"type": "trainee",
@@ -35765,7 +36111,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "102201"
 	},
 	{
 		"type": "trainee",
@@ -36917,7 +37264,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "100501"
 	},
 	{
 		"type": "trainee",
@@ -38699,7 +39047,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "104001"
 	},
 	{
 		"type": "trainee",
@@ -39823,7 +40172,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "104002"
 	},
 	{
 		"type": "trainee",
@@ -40995,7 +41345,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "100701"
 	},
 	{
 		"type": "trainee",
@@ -42123,7 +42474,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "101101"
 	},
 	{
 		"type": "trainee",
@@ -43254,7 +43606,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "101102"
 	},
 	{
 		"type": "trainee",
@@ -44373,7 +44726,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "105201"
 	},
 	{
 		"type": "trainee",
@@ -45505,7 +45859,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "102801"
 	},
 	{
 		"type": "trainee",
@@ -46617,7 +46972,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "101201"
 	},
 	{
 		"type": "trainee",
@@ -47786,7 +48142,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "103901"
 	},
 	{
 		"type": "trainee",
@@ -48934,7 +49291,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "106101"
 	},
 	{
 		"type": "trainee",
@@ -50082,7 +50440,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "102501"
 	},
 	{
 		"type": "trainee",
@@ -51240,7 +51599,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "100401"
 	},
 	{
 		"type": "trainee",
@@ -52398,7 +52758,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "100402"
 	},
 	{
 		"type": "trainee",
@@ -53519,7 +53880,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "105601"
 	},
 	{
 		"type": "trainee",
@@ -54640,7 +55002,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "105602"
 	},
 	{
 		"type": "trainee",
@@ -55770,7 +56133,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "102401"
 	},
 	{
 		"type": "trainee",
@@ -56905,7 +57269,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "102402"
 	},
 	{
 		"type": "trainee",
@@ -58077,7 +58442,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "105801"
 	},
 	{
 		"type": "trainee",
@@ -59243,7 +59609,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "105901"
 	},
 	{
 		"type": "trainee",
@@ -60374,7 +60741,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "101301"
 	},
 	{
 		"type": "trainee",
@@ -61512,7 +61880,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "101302"
 	},
 	{
 		"type": "trainee",
@@ -62612,7 +62981,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "102701"
 	},
 	{
 		"type": "trainee",
@@ -63742,7 +64112,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "102601"
 	},
 	{
 		"type": "trainee",
@@ -64946,7 +65317,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "101601"
 	},
 	{
 		"type": "trainee",
@@ -66113,7 +66485,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "105001"
 	},
 	{
 		"type": "trainee",
@@ -67299,7 +67672,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "106001"
 	},
 	{
 		"type": "trainee",
@@ -68463,7 +68837,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "100601"
 	},
 	{
 		"type": "trainee",
@@ -69638,7 +70013,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "100602"
 	},
 	{
 		"type": "trainee",
@@ -70754,7 +71130,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "103001"
 	},
 	{
 		"type": "trainee",
@@ -71872,7 +72249,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "103002"
 	},
 	{
 		"type": "trainee",
@@ -73006,7 +73384,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "104101"
 	},
 	{
 		"type": "trainee",
@@ -74191,7 +74570,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "102001"
 	},
 	{
 		"type": "trainee",
@@ -75330,7 +75710,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "100201"
 	},
 	{
 		"type": "trainee",
@@ -76466,7 +76847,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "104601"
 	},
 	{
 		"type": "trainee",
@@ -77602,7 +77984,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "100101"
 	},
 	{
 		"type": "trainee",
@@ -78742,7 +79125,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "100102"
 	},
 	{
 		"type": "trainee",
@@ -79936,7 +80320,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "104501"
 	},
 	{
 		"type": "trainee",
@@ -81130,7 +81515,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "104502"
 	},
 	{
 		"type": "trainee",
@@ -82348,7 +82734,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "101701"
 	},
 	{
 		"type": "trainee",
@@ -83572,7 +83959,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "101702"
 	},
 	{
 		"type": "trainee",
@@ -84766,7 +85154,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "101001"
 	},
 	{
 		"type": "trainee",
@@ -85915,7 +86304,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "102101"
 	},
 	{
 		"type": "trainee",
@@ -87018,7 +87408,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "101501"
 	},
 	{
 		"type": "trainee",
@@ -88204,7 +88595,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "100301"
 	},
 	{
 		"type": "trainee",
@@ -89395,7 +89787,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "100302"
 	},
 	{
 		"type": "trainee",
@@ -90506,7 +90899,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "104801"
 	},
 	{
 		"type": "scenario",
@@ -91846,7 +92240,8 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "100801"
 	},
 	{
 		"type": "trainee",
@@ -92980,6 +93375,7 @@
 				},
 				"default_preference": 2
 			}
-		]
+		],
+		"gametora_id": "103501"
 	}
 ]
