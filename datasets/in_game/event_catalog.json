@@ -6071,7 +6071,7 @@
           "speed": 20,
           "guts": 10,
           "hints": [
-            "Skill ID: 201902 (+1)"
+            "Head-On (+1)"
           ],
           "bond": 5
         },
@@ -29993,7 +29993,7 @@
       "3": [
         {
           "hints": [
-            "Skill ID: 201702 (+3)"
+            "All I've Got (+3)"
           ]
         }
       ]
@@ -37463,14 +37463,14 @@
           "mood": -1,
           "wit": 30,
           "hints": [
-            "Skill ID: 201692 (+1)"
+            "Be Still (+1)"
           ]
         },
         {
           "energy": -10,
           "wit": 30,
           "hints": [
-            "Skill ID: 201692 (+1)"
+            "Be Still (+1)"
           ]
         }
       ]
@@ -38828,14 +38828,14 @@
           "mood": -1,
           "wit": 30,
           "hints": [
-            "Skill ID: 201692 (+1)"
+            "Be Still (+1)"
           ]
         },
         {
           "energy": -10,
           "wit": 30,
           "hints": [
-            "Skill ID: 201692 (+1)"
+            "Be Still (+1)"
           ]
         }
       ]

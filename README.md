@@ -1,8 +1,8 @@
 # Umamusume Auto Train
 
-> **Latest Update (v0.4.0)**: Unity Cup strategy, PAL policy, ADB mode, preset groups, and smarter training/race handling.
+> **Latest Update (v0.5.0)**: Dynamic running style changer, automated skills scraping with Selenium, unified game data update (`--all`), and multiple same-name card support.
 >
-> _Previous updates_: v0.3.3 bugfixes, v0.3.2 skill memory + data scraper, v0.3.1 remote template matching fixes.
+> _Previous updates_: v0.4.0 Unity Cup & PAL, v0.3.3 bugfixes, v0.3.2 skill memory + data scraper.
 
 
 This project is an **AI bot for Umamusume: Pretty Derby** that automates training, races, and skill management. It helps you **farm fans, clear goals, and optimize stats** without grinding manually.
@@ -108,7 +108,7 @@ Make sure you meet these conditions:
 2. **Clone the Repository**
    Copy and paste these commands one by one, pressing Enter after each:
    ```bash
-   git clone https://github.com/Magody/Umaplay.git
+   git clone https://github.com/ivanbarreto/Umaplay.git
    cd Umaplay
    ```
 
@@ -151,14 +151,34 @@ python -m pip install paddlex
 
 I regularly push new updates and bug fixes. To update:
 
-**Option 1: Using Web UI (Easiest)**
+**Option 1: One-Command Update (Recommended)**
+```bash
+.venv\Scripts\activate
+python update.py
+```
+This single command will:
+- Pull the latest code from GitHub
+- Update all game data (skills, characters, support cards)
+- Download card images
+- Rebuild the catalog and web UI
+
+Or on Windows, just double-click `update.bat`.
+
+**Options:**
+```bash
+python update.py --no-pull    # Skip git pull (only update game data)
+python update.py --no-images  # Skip downloading card images
+python update.py --debug      # Verbose output
+```
+
+**Option 2: Using Web UI**
 - Use the **Pull from GitHub** button in the Web UI
 - There's also a **Force Update** button if needed
 - **Restart the bot after updating. Close all terminals / IDEs and do a fresh start**
 
 ![Pull button](assets/doc/git_pull.png)
 
-**Option 2: Manual Update**
+**Option 3: Manual Update**
 Open Command Prompt in the Umaplay folder and run:
 ```bash
 .venv\Scripts\activate
@@ -167,16 +187,46 @@ git pull
 pip install -r requirements.txt
 ```
 
-#### Updating Game Data (Supports & Characters)
+#### Updating Game Data (Skills, Supports & Characters)
 
-To automatically discover and update supports/characters (and rebuild the site):
+The bot includes a unified script to update all game data from GameTora. This keeps your skills, support cards, and character events up to date.
 
+**Update everything (recommended):**
 ```bash
 .venv\Scripts\activate
+python scripts/update_game_data.py --all
+```
+
+This will:
+1. Update skills (517+ skills with proper IDs and rarities)
+2. Discover and update all support cards (172+)
+3. Discover and update all characters/trainees (61+)
+4. Rebuild the catalog and web UI
+
+**Update everything with images:**
+```bash
+python scripts/update_game_data.py --all --images
+```
+
+**Update only skills:**
+```bash
+python scripts/update_game_data.py --update-skills
+```
+
+**Update only supports and characters (no skills):**
+```bash
 python scripts/update_game_data.py --discover --build
 ```
 
-If you want images too, add `--images`.
+**Preview changes without modifying files:**
+```bash
+python scripts/update_game_data.py --all --dry-run
+```
+
+**Debug mode (verbose output):**
+```bash
+python scripts/update_game_data.py --all --debug
+```
 
 Then **Restart the bot after updating. Close all terminals / IDEs and do a fresh start**
 
@@ -353,7 +403,32 @@ The bot uses multiple AI components to make decisions:
 ---
 
 ## 🆕 Changelog (latest)
- 
+
+### ✨ Umaplay v0.5.0 — Data Pipeline & Running Style Update
+
+- **Dynamic Running Style Changer**
+  - Automatically switches running styles based on scheduled dates during a run.
+  - Configure style transitions in the Web UI to optimize for different race phases.
+
+- **Automated Skills Scraping**
+  - New Selenium-based skills scraper fetches 517+ skills with proper IDs and rarities from GameTora.
+  - No more manual JSON URL hunting — the script automatically captures the skills data.
+
+- **Unified Game Data Update**
+  - Single command `python scripts/update_game_data.py --all` updates everything: skills, support cards (172+), characters (61+), and rebuilds the catalog.
+  - Add `--images` flag to also download card images.
+  - Supports `--dry-run` for previewing changes and `--debug` for verbose output.
+
+- **Multiple Cards Support**
+  - Fixed support card handling to allow multiple cards of the same name, rarity, and attribute (e.g., two different Silence Suzuka SPD SSR cards).
+  - Uses GameTora IDs for unique identification.
+
+- **Documentation**
+  - Added CLAUDE.md for Claude Code guidance.
+  - Updated README with comprehensive game data update instructions.
+
+---
+
 ### ✨ Umaplay v0.4.0 — Unity Cup & PAL Update
 
 - **Unity Cup upgrades**  
@@ -458,15 +533,6 @@ The bot uses multiple AI components to make decisions:
 All contributions are welcome!
 
 ---
-
-## 💖 Support the Project
-
-If you find this project helpful and would like to support its development, consider making a donation. Your support motivates further improvements! Also let me know on discord if you have a very specific requirement.
-
-[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/magody)
-[![Donate with PayPal](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://paypal.me/MagodyBoy)
-
-Every contribution, no matter how small, is greatly appreciated! Thank you for your support! ❤️
 
 ## Tags
 

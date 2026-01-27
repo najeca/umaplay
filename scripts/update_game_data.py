@@ -16,7 +16,10 @@ Usage:
     # Full automatic update (skills + discover + build)
     python scripts/update_game_data.py --all
 
-    # Update skills (requires manual URL from DevTools)
+    # Update skills (uses Selenium to scrape from skills page)
+    python scripts/update_game_data.py --update-skills
+
+    # Update skills with manual JSON URL (optional, skips Selenium)
     python scripts/update_game_data.py --update-skills --skills-url "https://gametora.com/data/umamusume/skills.XXXXXXXX.json"
 
     # List all existing support cards and characters
@@ -94,6 +97,216 @@ def error(*args, **kwargs):
 
 
 # === Skills Update ===
+
+def fetch_skills_with_selenium(debug: bool = False) -> List[Dict[str, Any]]:
+    """
+    Fetch skills by using Selenium to capture the skills JSON data.
+    The page loads skills via XHR, so we intercept that or find it in __NEXT_DATA__.
+    """
+    import time
+
+    try:
+        from selenium import webdriver
+        from selenium.webdriver.common.by import By
+        from selenium.webdriver.chrome.options import Options as ChromeOptions
+        from selenium.webdriver.support.ui import WebDriverWait
+        from selenium.webdriver.support import expected_conditions as EC
+    except ImportError as e:
+        warn(f"Selenium not available: {e}")
+        return []
+
+    def dismiss_cookie_banner(driver) -> None:
+        """Dismiss Quantcast cookie consent banner if present."""
+        try:
+            time.sleep(1)
+            dismiss_js = """
+            (function() {
+                var qcButtons = document.querySelectorAll('.qc-cmp2-summary-buttons button, [class*="qc-cmp"] button');
+                for (var btn of qcButtons) {
+                    var text = (btn.textContent || btn.innerText || '').toLowerCase();
+                    if (text.includes('agree') || text.includes('accept') || text.includes('consent')) {
+                        btn.click();
+                        return 'clicked qc button';
+                    }
+                }
+                var allButtons = document.querySelectorAll('button, [role="button"]');
+                for (var btn of allButtons) {
+                    var text = (btn.textContent || btn.innerText || '').toLowerCase();
+                    if (text.includes('agree') || text.includes('accept all') || text.includes('consent')) {
+                        btn.click();
+                        return 'clicked consent button';
+                    }
+                }
+                var overlays = document.querySelectorAll('.qc-cmp-cleanslate, [class*="qc-cmp2"], .qc-cmp2-container');
+                for (var overlay of overlays) {
+                    overlay.remove();
+                }
+                return overlays.length > 0 ? 'removed overlay' : 'no banner found';
+            })();
+            """
+            result = driver.execute_script(dismiss_js)
+            dbg(debug, f"[DEBUG] Cookie banner dismiss result: {result}")
+            time.sleep(1)
+            driver.execute_script("""
+                var overlays = document.querySelectorAll('.qc-cmp-cleanslate, [class*="qc-cmp2"]');
+                overlays.forEach(function(el) { el.style.display = 'none'; });
+            """)
+            time.sleep(0.3)
+        except Exception as e:
+            dbg(debug, f"[DEBUG] Cookie banner dismiss error: {e}")
+
+    def select_global_server(driver) -> None:
+        """Select global server from the settings dropdown."""
+        try:
+            driver.find_element(
+                By.CSS_SELECTOR,
+                "#styles_page-header_alt__vF57o > div.styles_header-banner__OU9Yu > div > div > span"
+            ).click()
+            driver.find_element(
+                By.CSS_SELECTOR,
+                "#tippy-1 > div > div.tippy-content > div > div > div > div:nth-child(5) > label"
+            ).click()
+            time.sleep(2)
+        except Exception as e:
+            dbg(debug, f"[DEBUG] Server selection error (may already be global): {e}")
+
+    def set_up(driver) -> None:
+        driver.get(BASE_URL + "/umamusume")
+        dismiss_cookie_banner(driver)
+        select_global_server(driver)
+
+    use_headless = os.environ.get("DEBUG_VISIBLE", "").lower() not in ("1", "true", "yes")
+
+    try:
+        dbg(debug, f"[DEBUG] Starting Chrome (headless={use_headless}) for skills scraping...")
+        options = ChromeOptions()
+        if use_headless:
+            options.add_argument("--headless")
+        options.add_argument("--disable-gpu")
+        options.add_argument("--no-sandbox")
+        options.add_argument("--disable-dev-shm-usage")
+        options.add_argument("--window-size=1920,1080")
+
+        # Enable performance logging to capture network requests
+        options.set_capability("goog:loggingPrefs", {"performance": "ALL"})
+
+        driver = webdriver.Chrome(options=options)
+
+        try:
+            # Setup: dismiss cookie banner and select global server
+            set_up(driver)
+
+            # Navigate to skills page
+            dbg(debug, f"[DEBUG] Loading skills page: {SKILLS_PAGE_URL}")
+            driver.get(SKILLS_PAGE_URL)
+
+            # Wait for page to load
+            time.sleep(3)
+
+            # Method 1: Try to find __NEXT_DATA__ which contains the skills data
+            try:
+                next_data_element = driver.find_element(By.ID, "__NEXT_DATA__")
+                next_data_text = next_data_element.get_attribute("innerHTML")
+                if next_data_text:
+                    next_data = json.loads(next_data_text)
+                    # Navigate to skills data in __NEXT_DATA__
+                    skills_data = next_data.get("props", {}).get("pageProps", {}).get("skills", [])
+                    if skills_data:
+                        dbg(debug, f"[DEBUG] Found {len(skills_data)} skills in __NEXT_DATA__")
+                        return parse_skills_from_json_data(skills_data, debug)
+            except Exception as e:
+                dbg(debug, f"[DEBUG] __NEXT_DATA__ extraction failed: {e}")
+
+            # Method 2: Try to discover JSON URL from page source and fetch it
+            page_source = driver.page_source
+            match = SKILLS_JSON_RX.search(page_source)
+            if match:
+                path = match.group(1)
+                json_url = path if path.startswith("http") else BASE_URL.rstrip("/") + "/" + path.lstrip("/")
+                dbg(debug, f"[DEBUG] Found skills JSON URL in page: {json_url}")
+                skills = fetch_skills_json(json_url, debug)
+                if skills:
+                    return skills
+
+            # Method 3: Check network logs for skills JSON request
+            try:
+                logs = driver.get_log("performance")
+                for log in logs:
+                    message = json.loads(log["message"])["message"]
+                    if message.get("method") == "Network.responseReceived":
+                        url = message.get("params", {}).get("response", {}).get("url", "")
+                        if "skills" in url and ".json" in url:
+                            dbg(debug, f"[DEBUG] Found skills JSON URL in network logs: {url}")
+                            skills = fetch_skills_json(url, debug)
+                            if skills:
+                                return skills
+            except Exception as e:
+                dbg(debug, f"[DEBUG] Network log extraction failed: {e}")
+
+            warn("Could not extract skills data via Selenium")
+            return []
+
+        finally:
+            driver.quit()
+
+    except Exception as e:
+        warn(f"Selenium skills scraping failed: {e}")
+        return []
+
+
+def parse_skills_from_json_data(raw: List[Dict[str, Any]], debug: bool = False) -> List[Dict[str, Any]]:
+    """Parse skills from raw JSON data (from __NEXT_DATA__ or API response)."""
+    # Rarity mapping
+    rarity_map = {
+        1: ("normal", "dnlGQR"),
+        2: ("gold", "geDDHx"),
+        3: ("unique", "bhlwbP"),
+    }
+
+    icon_base = f"{BASE_URL}/images/umamusume/skill_icons/"
+    skills: List[Dict[str, Any]] = []
+
+    for sk in raw:
+        skill_id = sk.get("id")
+        name_en = sk.get("name_en") or ""
+        desc_en = sk.get("desc_en") or ""
+        iconid = sk.get("iconid")
+        rarity_code = sk.get("rarity")
+
+        if skill_id is None or not name_en or not desc_en or iconid is None:
+            continue
+
+        if rarity_code in rarity_map:
+            rarity, color_class = rarity_map[rarity_code]
+        elif skill_id >= 900000:
+            rarity, color_class = "inherited", "dnlGQR"
+        else:
+            rarity, color_class = "normal", "dnlGQR"
+
+        icon_filename = f"utx_ico_skill_{iconid}.png"
+        icon_src = icon_base + icon_filename
+
+        # Grade symbol detection
+        grade_symbol = None
+        for sym in ("◎", "○"):
+            if name_en.strip().endswith(sym):
+                grade_symbol = sym
+                break
+
+        skills.append({
+            "id": skill_id,
+            "icon_filename": icon_filename,
+            "icon_src": icon_src,
+            "name": name_en,
+            "description": desc_en,
+            "color_class": color_class,
+            "rarity": rarity,
+            "grade_symbol": grade_symbol,
+        })
+
+    dbg(debug, f"[DEBUG] Parsed {len(skills)} skills from JSON data")
+    return skills
+
 
 def discover_skills_json_url(debug: bool = False) -> Optional[str]:
     """Auto-discover the skills JSON URL from GameTora HTML."""
@@ -188,25 +401,24 @@ def update_skills(
     debug: bool = False,
     dry_run: bool = False,
 ) -> bool:
-    """Auto-discover and update skills.json from GameTora."""
+    """Auto-discover and update skills.json from GameTora using Selenium."""
     info("Updating skills...")
 
-    url = skills_url
-    if not url:
-        url = discover_skills_json_url(debug)
+    skills: List[Dict[str, Any]] = []
 
-    if not url:
-        error("Could not auto-discover skills JSON URL.")
-        error("To find the URL manually:")
-        error("  1. Open https://gametora.com/umamusume/skills in Chrome")
-        error("  2. Open DevTools (F12) -> Network tab -> filter by 'skills'")
-        error("  3. Refresh the page and look for 'skills.*.json' request")
-        error("  4. Copy the URL and pass it with --skills-url")
-        return False
+    # If a manual URL is provided, try JSON mode first
+    if skills_url:
+        info(f"Using provided skills JSON URL: {skills_url}")
+        skills = fetch_skills_json(skills_url, debug)
 
-    skills = fetch_skills_json(url, debug)
+    # Default to Selenium scraping (same as characters/support cards)
     if not skills:
-        error("No skills parsed from JSON.")
+        info("Scraping skills from GameTora using Selenium...")
+        skills = fetch_skills_with_selenium(debug)
+
+    if not skills:
+        error("Could not fetch skills via Selenium.")
+        error("Alternatively, you can provide a manual JSON URL with --skills-url")
         return False
 
     if dry_run:

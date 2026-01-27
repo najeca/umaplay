@@ -4712,7 +4712,7 @@
 							"stamina": 25,
 							"skill_pts": 10,
 							"hints": [
-								"Skill ID: 202022 (+1)"
+								"Early Start (+1)"
 							],
 							"bond": 5
 						}
@@ -4751,7 +4751,7 @@
 							"skill_pts": 15,
 							"hints": [
 								"Corner Connoisseur (+2)",
-								"Skill ID: 202032 (+1)"
+								"Risky Business (+1)"
 							],
 							"bond": 5
 						}
@@ -4822,7 +4822,7 @@
 		"event_skills": [
 			{
 				"id": "202022",
-				"name": "Skill ID: 202022"
+				"name": "Early Start"
 			},
 			{
 				"id": "201552",
@@ -4834,7 +4834,7 @@
 			},
 			{
 				"id": "202032",
-				"name": "Skill ID: 202032"
+				"name": "Risky Business"
 			},
 			{
 				"id": "200052",
@@ -6184,7 +6184,7 @@
 			},
 			{
 				"id": "202002",
-				"name": "Skill ID: 202002"
+				"name": "Familiar Ground"
 			},
 			{
 				"id": "200462",
@@ -6196,7 +6196,7 @@
 			},
 			{
 				"id": "201682",
-				"name": "Skill ID: 201682"
+				"name": "Forward, March!"
 			},
 			{
 				"id": "201442",
@@ -6322,7 +6322,7 @@
 			},
 			{
 				"id": "202002",
-				"name": "Skill ID: 202002"
+				"name": "Familiar Ground"
 			},
 			{
 				"id": "200462",
@@ -6334,7 +6334,7 @@
 			},
 			{
 				"id": "201682",
-				"name": "Skill ID: 201682"
+				"name": "Forward, March!"
 			},
 			{
 				"id": "201442",
@@ -8954,7 +8954,7 @@
 							"speed": 20,
 							"guts": 10,
 							"hints": [
-								"Skill ID: 201902 (+1)"
+								"Head-On (+1)"
 							],
 							"bond": 5
 						},
@@ -9047,7 +9047,7 @@
 		"event_skills": [
 			{
 				"id": "201902",
-				"name": "Skill ID: 201902"
+				"name": "Head-On"
 			},
 			{
 				"id": "200282",
@@ -11153,7 +11153,7 @@
 			},
 			{
 				"id": "201702",
-				"name": "Skill ID: 201702"
+				"name": "All I've Got"
 			},
 			{
 				"id": "200602",
@@ -11281,7 +11281,7 @@
 							"guts": 15,
 							"skill_pts": 20,
 							"hints": [
-								"Skill ID: 201701 (+3)"
+								"Come What May (+3)"
 							],
 							"bond": 5
 						},
@@ -11289,7 +11289,7 @@
 							"mood": -1,
 							"guts": 10,
 							"hints": [
-								"Skill ID: 201702 (+3)"
+								"All I've Got (+3)"
 							],
 							"bond": 5
 						}
@@ -11326,7 +11326,7 @@
 			},
 			{
 				"id": "201702",
-				"name": "Skill ID: 201702"
+				"name": "All I've Got"
 			},
 			{
 				"id": "200602",
@@ -11344,11 +11344,11 @@
 			},
 			{
 				"id": "201701",
-				"name": "Skill ID: 201701"
+				"name": "Come What May"
 			},
 			{
 				"id": "201702",
-				"name": "Skill ID: 201702"
+				"name": "All I've Got"
 			},
 			{
 				"id": "200042",
@@ -15044,7 +15044,7 @@
 							"guts": 2,
 							"wit": 3,
 							"hints": [
-								"Skill ID: 201702 (+2)"
+								"All I've Got (+2)"
 							]
 						}
 					]
@@ -15139,7 +15139,7 @@
 		"event_skills": [
 			{
 				"id": "201702",
-				"name": "Skill ID: 201702"
+				"name": "All I've Got"
 			},
 			{
 				"id": "200441",
@@ -22061,7 +22061,7 @@
 						{
 							"skill_pts": 20,
 							"hints": [
-								"Skill ID: 201691 (+1)"
+								"Lie in Wait (+1)"
 							]
 						}
 					]
@@ -22115,7 +22115,7 @@
 			},
 			{
 				"id": "201691",
-				"name": "Skill ID: 201691"
+				"name": "Lie in Wait"
 			},
 			{
 				"id": "201102",
@@ -30667,7 +30667,7 @@
 							"skill_pts": 50,
 							"hints": [
 								"Unyielding Spirit (+2)",
-								"Skill ID: 201902 (+2)",
+								"Head-On (+2)",
 								"Nimble Navigator (+1)"
 							]
 						}
@@ -35015,7 +35015,7 @@
 					"3": [
 						{
 							"hints": [
-								"Skill ID: 201702 (+3)"
+								"All I've Got (+3)"
 							]
 						}
 					]
@@ -35432,7 +35432,7 @@
 							"skill_pts": 45,
 							"hints": [
 								"Preferred Position (+2)",
-								"Skill ID: 201902 (+2)"
+								"Head-On (+2)"
 							],
 							"bond": 4
 						}
@@ -41499,14 +41499,14 @@
 							"mood": -1,
 							"wit": 30,
 							"hints": [
-								"Skill ID: 201692 (+1)"
+								"Be Still (+1)"
 							]
 						},
 						{
 							"energy": -10,
 							"wit": 30,
 							"hints": [
-								"Skill ID: 201692 (+1)"
+								"Be Still (+1)"
 							]
 						}
 					]
@@ -42631,14 +42631,14 @@
 							"mood": -1,
 							"wit": 30,
 							"hints": [
-								"Skill ID: 201692 (+1)"
+								"Be Still (+1)"
 							]
 						},
 						{
 							"energy": -10,
 							"wit": 30,
 							"hints": [
-								"Skill ID: 201692 (+1)"
+								"Be Still (+1)"
 							]
 						}
 					]
@@ -55470,7 +55470,7 @@
 							"skill_pts": 30,
 							"hints": [
 								"Final Push (+1)",
-								"Skill ID: 201902 (+1)",
+								"Head-On (+1)",
 								"Slick Surge (+1)",
 								"Straightaway Spurt (+1)"
 							]
@@ -56606,7 +56606,7 @@
 							"skill_pts": 30,
 							"hints": [
 								"Final Push (+1)",
-								"Skill ID: 201902 (+1)",
+								"Head-On (+1)",
 								"Slick Surge (+1)",
 								"Straightaway Spurt (+1)"
 							]
@@ -58948,7 +58948,7 @@
 							"speed": 20,
 							"power": 20,
 							"hints": [
-								"Skill ID: 201702 (+2)"
+								"All I've Got (+2)"
 							]
 						}
 					]
@@ -65809,7 +65809,7 @@
 							"power": 10,
 							"skill_pts": 15,
 							"hints": [
-								"Skill ID: 202022 (+2)"
+								"Early Start (+2)"
 							]
 						}
 					]
@@ -72722,7 +72722,7 @@
 							"skill_pts": 45,
 							"hints": [
 								"Moxie (+1)",
-								"Skill ID: 202042 (+1)"
+								"Light as a Feather (+1)"
 							],
 							"status": "Hot Topic"
 						}
@@ -75032,7 +75032,7 @@
 					"1": [
 						{
 							"hints": [
-								"Skill ID: 202051 (+1)"
+								"Runaway (+1)"
 							]
 						}
 					]
@@ -82033,7 +82033,7 @@
 							"guts": 15,
 							"skill_pts": 45,
 							"hints": [
-								"Skill ID: 201692 (+2)"
+								"Be Still (+2)"
 							],
 							"bond": 4
 						}
@@ -83258,7 +83258,7 @@
 							"guts": 15,
 							"skill_pts": 45,
 							"hints": [
-								"Skill ID: 201692 (+2)"
+								"Be Still (+2)"
 							],
 							"bond": 4
 						}
@@ -84447,9 +84447,9 @@
 							"guts": 25,
 							"skill_pts": 50,
 							"hints": [
-								"Skill ID: 201702 (+2)",
+								"All I've Got (+2)",
 								"Skill ID: 202502 (+2)",
-								"Skill ID: 201902 (+2)"
+								"Head-On (+2)"
 							]
 						}
 					]
@@ -87918,7 +87918,7 @@
 							"wit": 3,
 							"skill_pts": 45,
 							"hints": [
-								"Skill ID: 201902 (+2)"
+								"Head-On (+2)"
 							],
 							"bond": 5
 						}
@@ -89110,7 +89110,7 @@
 							"wit": 3,
 							"skill_pts": 45,
 							"hints": [
-								"Skill ID: 201902 (+2)"
+								"Head-On (+2)"
 							],
 							"bond": 5
 						}
@@ -91514,7 +91514,7 @@
 							"stamina": 25,
 							"skill_pts": 25,
 							"hints": [
-								"Skill ID: 201702 (+2)",
+								"All I've Got (+2)",
 								"Slick Surge (+2)",
 								"Skill ID: 202452 (+2)"
 							]
