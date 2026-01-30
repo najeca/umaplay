@@ -105,6 +105,82 @@ class AgentUnityCup(AgentScenario):
         # Track Unity Cup opponent stage count
         self._unity_cup_race_stage: int = 0
 
+    def _check_and_wait_for_tp(self, target_tp: int = 90, min_tp: int = 10) -> bool:
+        """
+        Check TP on home screen and wait if below target.
+        Returns False if TP is below minimum (bot should stop).
+        Returns True if TP is sufficient to continue.
+        """
+        import re
+        from core.utils.logger import logger_uma
+    
+        logger_uma.info(f"[TP] Checking TP level (target: {target_tp}, minimum: {min_tp})")
+
+        try:
+            # Take screenshot
+            img, _, dets = self.yolo_engine.recognize(
+                imgsz=self.imgsz,
+                conf=self.conf,
+                iou=self.iou,
+                tag="tp_check",
+                agent=self.agent_name,
+            )
+        
+            # Define ROI for TP display (top-middle of screen)
+            # Based on your screenshot, TP is at approximately:
+            # X: 40% - 60% of width (middle)
+            # Y: 0% - 8% of height (top)
+            h, w = img.size[1], img.size[0]
+            tp_roi = (int(w * 0.40), int(h * 0.00), int(w * 0.60), int(h * 0.08))
+
+            from core.utils.img import crop_pil
+            tp_crop = crop_pil(img, tp_roi)
+        
+            # OCR the TP region
+            tp_text = (self.ocr.text(tp_crop) or "").strip()
+            logger_uma.debug(f"[TP] OCR raw text: '{tp_text}'")
+        
+            # Parse TP (format: "90/106" or "90 / 106")
+            match = re.search(r'(\d+)\s*/\s*(\d+)', tp_text)
+            if not match:
+                logger_uma.warning(f"[TP] Could not parse TP from text: '{tp_text}'. Continuing anyway.")
+                return True
+            
+            current_tp = int(match.group(1))
+            max_tp = int(match.group(2))
+        
+            logger_uma.info(f"[TP] Current TP: {current_tp}/{max_tp}")
+        
+            # Check if below minimum
+            if current_tp < min_tp:
+                logger_uma.error(f"[TP] TP is below minimum ({current_tp} < {min_tp}). Stopping bot.")
+                return False
+            
+            # Check if below target - wait if needed
+            if current_tp < target_tp:
+                wait_tp = target_tp - current_tp
+                wait_minutes = wait_tp * 10
+                wait_seconds = wait_minutes * 60
+            
+                logger_uma.info(
+                    f"[TP] TP is {current_tp}, need {target_tp}. "
+                    f"Waiting {wait_minutes} minutes ({wait_tp} TP × 10 min/TP) for TP recovery..."
+                )
+            
+                import time
+                time.sleep(wait_seconds)
+            
+                logger_uma.info(f"[TP] Wait complete. TP should now be ~{target_tp}. Resuming bot...")
+            else:
+                logger_uma.info(f"[TP] TP is sufficient ({current_tp} >= {target_tp}). Starting career...")
+        
+            return True
+        
+        except Exception as e:
+            logger_uma.warning(f"[TP] Error checking TP: {e}. Continuing anyway.")
+            return True
+
+
     def run(self, *, delay: float = 0.4, max_iterations: int | None = None) -> None:
         self.ctrl.focus()
         self.is_running = True
@@ -112,6 +188,12 @@ class AgentUnityCup(AgentScenario):
         # Ensure memory metadata is aligned at the start of a run
         self._refresh_skill_memory()
         self._unity_cup_race_stage = 0
+
+        # TP Check before starting
+        if not self._check_and_wait_for_tp(target_tp=90, min_tp=10):
+            logger_uma.error("[agent] TP check failed. Stopping bot.")
+            self.is_running = False
+            return
 
         while self.is_running:
             # Hard-stop hook (F2)
