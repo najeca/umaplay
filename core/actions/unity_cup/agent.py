@@ -105,6 +105,56 @@ class AgentUnityCup(AgentScenario):
         # Track Unity Cup opponent stage count
         self._unity_cup_race_stage: int = 0
 
+    def _handle_career_completion(self) -> bool:
+        """
+        Handle career completion screens and return to home.
+        Returns True if ready to restart, False if should stop.
+        """
+        from core.utils.logger import logger_uma
+        import time
+        
+        logger_uma.info("[career_end] Handling career completion screens...")
+        
+        try:
+            # Wait for results to settle
+            time.sleep(3)
+            
+            # Click through result screens (green NEXT buttons)
+            max_clicks = 20  # Safety limit
+            for i in range(max_clicks):
+                # Look for green NEXT/OK/CONFIRM buttons
+                img, _, dets = self.yolo_engine.recognize(
+                    imgsz=self.imgsz,
+                    conf=self.conf,
+                    iou=self.iou,
+                    tag="career_end_navigation",
+                    agent=self.agent_name,
+                )
+                
+                from core.utils.yolo_objects import find
+                green_buttons = find(dets, "button_green")
+                
+                if not green_buttons:
+                    # No more buttons - might be at home already
+                    logger_uma.info(f"[career_end] No more green buttons after {i} clicks")
+                    break
+                
+                # Click the first green button
+                from core.utils.geometry import center_from_xyxy
+                cx, cy = center_from_xyxy(green_buttons[0]["xyxy"])
+                self.ctrl.click(cx, cy, clicks=1)
+                time.sleep(1.5)
+            
+            # Wait for home screen to stabilize
+            time.sleep(3)
+            
+            logger_uma.info("[career_end] Reached home screen. Ready to restart.")
+            return True
+            
+        except Exception as e:
+            logger_uma.error(f"[career_end] Error handling completion: {e}")
+            return False
+
     def _check_and_wait_for_tp(self, target_tp: int = 90, min_tp: int = 10) -> bool:
         """
         Check TP on home screen and wait if below target.
@@ -827,14 +877,30 @@ class AgentUnityCup(AgentScenario):
                     # x1 += btn_width + btn_width // 10
                     # x2 += btn_width + btn_width // 10
                     # self.ctrl.click_xyxy_center((x1, y1, x2, y2), clicks=1, jitter=1)
-                self.is_running = False  # end of career
+                # Career completion detected
                 logger_uma.info("Detected end of career")
                 try:
                     self.skill_memory.reset(persist=True)
                     logger_uma.info("[skill_memory] Reset after career completion")
                 except Exception as exc:
                     logger_uma.error("[skill_memory] reset failed: %s", exc)
-                continue
+
+                # Handle career completion and loop back
+                if self._handle_career_completion():
+                    # Check TP before restarting
+                    if not self._check_and_wait_for_tp(target_tp=90, min_tp=10):
+                        logger_uma.error("[agent] TP check failed after career end. Stopping bot.")
+                        self.is_running = False
+                        continue
+                    
+                    # Reset Unity Cup state for new run
+                    self._unity_cup_race_stage = 0
+                    logger_uma.info("[agent] Career completion handled. Restarting loop...")
+                    continue  # Restart the main loop
+                else:
+                    logger_uma.error("[agent] Career completion handling failed. Stopping bot.")
+                    self.is_running = False
+                    continue
 
             if screen == "ClawMachine":
                 self.claw_turn += 1
