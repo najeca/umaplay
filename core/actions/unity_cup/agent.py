@@ -154,6 +154,72 @@ class AgentUnityCup(AgentScenario):
         except Exception as e:
             logger_uma.error(f"[career_end] Error handling completion: {e}")
             return False
+        
+    def _navigate_to_support_deck(self) -> bool:
+        """
+        Navigate from home through Career setup screens to the Support Deck.
+        Assumes: Unity Cup scenario, Uma, and Parents are already pre-selected.
+        Clicks green buttons sequentially until Support Deck is detected.
+        Stops at Support Deck for Phase 2D (friend card selection).
+        Returns True if reached Support Deck, False if failed.
+        """
+        import time
+        from core.utils.nav import collect_snapshot, has
+
+        logger_uma.info("[setup_nav] Starting career setup navigation...")
+
+        max_steps = 15  # Safety limit - should only take ~4-5 clicks
+        for step in range(max_steps):
+            # Take snapshot to check current screen
+            img, dets = collect_snapshot(
+                self.waiter, self.yolo_engine, tag=f"setup_nav_check_{step}"
+            )
+
+            # Check if we've reached the Support Deck screen
+            if has(dets, "support_card"):
+                logger_uma.info(
+                    f"[setup_nav] Reached Support Deck screen after {step} steps. "
+                    f"Waiting for manual friend card selection."
+                )
+                return True
+
+            # Try to click a green button to advance to next screen
+            clicked = self.waiter.click_when(
+                classes=("button_green",),
+                prefer_bottom=True,
+                allow_greedy_click=True,
+                timeout_s=3.0,
+                tag=f"setup_nav_advance_{step}",
+            )
+
+            if not clicked:
+                logger_uma.warning(
+                    f"[setup_nav] No green button found at step {step}. "
+                    f"Screen may still be loading, waiting..."
+                )
+                # Screen might still be transitioning - wait and retry once
+                time.sleep(3.0)
+
+                clicked = self.waiter.click_when(
+                    classes=("button_green",),
+                    prefer_bottom=True,
+                    allow_greedy_click=True,
+                    timeout_s=5.0,
+                    tag=f"setup_nav_retry_{step}",
+                )
+
+                if not clicked:
+                    logger_uma.error(
+                        f"[setup_nav] Failed to find any green button after retry at step {step}. Stopping."
+                    )
+                    return False
+
+            # Wait for screen transition before next check
+            time.sleep(1.5)
+            logger_uma.debug(f"[setup_nav] Completed step {step}, advancing...")
+
+        logger_uma.error("[setup_nav] Reached max steps (15) without finding Support Deck.")
+        return False
 
     def _check_and_wait_for_tp(self, target_tp: int = 90, min_tp: int = 10) -> bool:
         """
@@ -893,14 +959,38 @@ class AgentUnityCup(AgentScenario):
                         self.is_running = False
                         continue
                     
-                    # Reset Unity Cup state for new run
-                    self._unity_cup_race_stage = 0
-                    logger_uma.info("[agent] Career completion handled. Restarting loop...")
-                    continue  # Restart the main loop
+                    # Phase 2C: Navigate setup screens to Support Deck
+                    if self._navigate_to_support_deck():
+                        logger_uma.info(
+                            "[agent] Reached Support Deck. Stopping bot - "
+                            "manually select friend card and press Start Career. "
+                            "Press F2 again to resume automation."
+                        )
+                        self.is_running = False
+                        continue
+                    else:
+                        logger_uma.error("[agent] Failed to navigate to Support Deck. Stopping bot.")
+                        self.is_running = False
+                        continue
                 else:
                     logger_uma.error("[agent] Career completion handling failed. Stopping bot.")
                     self.is_running = False
                     continue
+                
+            ## How It Works:
+            
+            # Career ends → Click result screens → Home
+            #     ↓
+            # TP Check (Phase 2A) - wait if needed
+            #     ↓
+            # Navigate Setup (Phase 2C):
+            #     Home → [green button] → Scenario (Unity Cup pre-selected)
+            #         → [green button] → Trainee (Tokai Teio pre-selected)  
+            #         → [green button] → Parents (legacy pre-selected)
+            #         → [green button] → Support Deck ← STOP (support_card detected)
+            #     ↓
+            # Bot stops. User manually picks friend card → Start Career
+            # User presses F2 → Bot resumes automation
 
             if screen == "ClawMachine":
                 self.claw_turn += 1
