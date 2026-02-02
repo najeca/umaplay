@@ -765,7 +765,16 @@ class AgentUnityCup(AgentScenario):
                         ):
                             logger_uma.info("[UnityCup] Clicked button_green")
                             sleep(1.5)
-                            self.begin_showdown(img, dets)
+                            
+                            # Get fresh screenshot before begin_showdown
+                            img_fresh, _, dets_fresh = self.yolo_engine.recognize(
+                                imgsz=self.imgsz,
+                                conf=self.conf,
+                                iou=self.iou,
+                                tag="unity_cup_pre_showdown",
+                                agent=self.agent_name,
+                            )
+                            self.begin_showdown(img_fresh, dets_fresh)
                         else:
                             logger_uma.warning("[UnityCup] button_green not found")
                     else:
@@ -978,7 +987,7 @@ class AgentUnityCup(AgentScenario):
                     continue
                 
             ## How It Works:
-            
+
             # Career ends → Click result screens → Home
             #     ↓
             # TP Check (Phase 2A) - wait if needed
